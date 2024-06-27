@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>放置圖片</title>
+    <style>
+        .content {
+            display: flex;
+            align-items: center;
+        }
+        .content img {
+            margin-right: 10px;
+            margin-left: 500px;
+        }
+    </style>
+    <title>超链接示例</title>
+    <style>
+        .link-container {
+            padding-left: 30px; /* 在超链接上方添加30px的内边距 */
+            font-size: 20px; /* 设置字体大小 */
+            font-weight: bold; /* 加粗 */
+        }
+    </style>
+    <style>
+        .member-container {
+          padding-left: 1750px; /* 在超链接上方添加30px的内边距 */
+        }
+    
+        .member-item {
+            background-color: #e23939;
+            padding: 10px;
+        }
+    </style>
+    <style>
+        .venue-container {
+            padding-left: 500px;
+            padding-right: 600px;
+            height:1000px;
+            justify-content: center;
+            font-size: 20px; 
+        }
+      
+        .venue1-item {
+              background-color: #f77575;
+              padding: 5px;
+        }
+
+        .venue2-item {
+              background-color: #f8e2e2;
+              padding: 5px;
+        }
+    </style>
+    <title>圖片佈滿畫面示例</title>
+    <style>
+        body {
+            margin: 0; /* 移除默认的边距 */
+            height: 500vh; /* 使 body 高度为视口高度 */
+            background-image: url("http://127.0.0.1:3000/andrew/03.JPG");
+            background-size: cover; /* 背景图像覆盖整个页面 */
+            background-repeat: no-repeat; /* 背景图像不重复 */
+            background-position: center; /* 背景图像居中 */
+        }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="member-container">
+        <br><br><div class="member-item"> Hello <h1>{{ data.name }}</h1><br>
+          <a href="/backpack">查看購物車</a> </div>
+      </div>
+      <div class="link-container">
+        <a href="/">登出</a><br>
+        <a href="/about">關於我們</a><br>
+        <a href="https://www.songshanculturalpark.org/">松菸文創園區</a><br>
+        <a href="https://www.daansports.com.tw/zh_TW/stadiums/node/1574935162001">大安運動中心</a><br>
+        <a href="https://www.tpejjsports.com.tw/zh-TW/stadiums/id/17/">中正運動中心</a><br>
+        <a href="https://service.gov.taipei/rental/VenueDetail/67fa48b4357d">仁愛國中</a><br>
+      </div>
+        <style>
+          .flex-container {
+              display: flex;
+              height:600px;
+              align-items: center; /* 垂直居中 */
+              justify-content: center; /* 水平居中 */
+          }
+          .flex-item h1 {
+            font-size: 80px; /* 设置字体大小 */
+            font-weight: bold; /* 加粗 */
+          }
+        </style>
+        <div class="flex-container">
+          <div class="flex-item"><h1><b>歡迎來到羽球的世界</b></h1>
+            <br><br><br><h1>場地報名</h1>
+          </div>
+        </div>
+    </main>
+
+  <body>
+    <main>
+      <div class="venue-container">
+        <div class="venue1-item"> {{members.date1}} 松菸文創園區   人數限制:24   剩餘名額:{{members.number[0]}} 
+          <form action="/users" method="POST">
+            報名人數(上限4人) <input type="text" name="num1">
+            <button>送出表單</button><br>
+          </form>  
+        </div>
+        <div class="venue2-item"> {{members.date2}} 中正運動中心   人數限制:28   剩餘名額:{{members.number[1]}} 
+          <form action="/users" method="POST">
+            報名人數(上限4人) <input type="text" name="num2">
+            <button>送出表單</button><br>
+          </form>  
+        </div>
+        <div class="venue1-item"> {{members.date3}} 大安運動中心   人數限制:32   剩餘名額:{{members.number[2]}} 
+          <form action="/users" method="POST">
+            報名人數(上限4人) <input type="text" name="num3">
+            <button>送出表單</button><br>
+          </form>  
+        </div>
+        <div class="venue2-item"> {{members.date4}} 松菸文創園區   人數限制:24   剩餘名額:{{members.number[3]}} 
+          <form action="/users" method="POST">
+            報名人數(上限4人) <input type="text" name="num4">
+            <button>送出表單</button><br>
+          </form>  
+        </div>
+        <div class="venue1-item"> {{members.date5}} 松菸文創園區   人數限制:24   剩餘名額:{{members.number[4]}} 
+          <form action="/users" method="POST">
+            報名人數(上限4人) <input type="text" name="num5">
+            <button>送出表單</button><br>
+          </form>  
+        </div>
+        <div class="venue2-item"> {{members.date6}} 大安運動中心   人數限制:32   剩餘名額:{{members.number[5]}} 
+          <form action="/users" method="POST">
+            報名人數(上限4人) <input type="text" name="num6">
+            <button>送出表單</button><br>
+          </form>  
+        </div>
+        <div class="venue1-item"> {{members.date7}} 仁愛國中   人數限制:8   剩餘名額:{{members.number[6]}} 
+          <form action="/users" method="POST">
+            報名人數(上限4人) <input type="text" name="num7">
+            <button>送出表單</button><br>
+          </form>  
+        </div>
+        <div class="venue2-item"> {{members.date8}} 松菸文創園區   人數限制:24   剩餘名額:{{members.number[7]}} 
+          <form action="/users" method="POST">
+            報名人數(上限4人) <input type="text" name="num8">
+            <button>送出表單</button><br>
+          </form>  
+        </div>
+        <div class="venue1-item"> {{members.date9}} 中正運動中心   人數限制:28   剩餘名額:{{members.number[8]}} 
+          <form action="/users" method="POST">
+            報名人數(上限4人) <input type="text" name="num9">
+            <button>送出表單</button><br>
+          </form>  
+        </div>
+        <div class="venue2-item"> {{members.date10}} 松菸文創園區   人數限制:24   剩餘名額:{{members.number[9]}} 
+          <form action="/users" method="POST">
+            報名人數(上限4人) <input type="text" name="num10">
+            <button>送出表單</button><br>
+          </form>  
+        </div>
+        <div class="link-container">
+          <a href="/list">查看報名資訊</a><br>  
+        </div>
+      </div>
+      <div class="flex-container">
+        <div class="flex-item">
+          <h1>球具販售</h1>
+        </div>
+      </div>
+    <body>
+        <div class="content">
+            <img src="andrew/07.JPG" alt="描述">
+        </div>
+    </body>
+    <body>
+      <div class="venue-container">
+        <div class="venue1-item"> 勝利牌 450元/筒----------------------暴力丹 350元/筒--------------------------江山燕 250元/筒
+          <br>庫存數量:{{inventory.n1}}--------------------------庫存數量:{{inventory.n2}}-------------------------------庫存數量:{{inventory.n3}}
+          <form action="/users" method="POST">
+            <br>勝利牌(購買數量)----------<input type="text" name="buy1"> 
+            <button>加入購物車</button> 
+          </form>  
+          <form action="/users" method="POST">
+            <br>暴力丹(購買數量)----------<input type="text" name="buy2"> 
+            <button>加入購物車</button> 
+          </form>  
+          <form action="/users" method="POST">
+            <br>江山燕(購買數量)----------<input type="text" name="buy3"> 
+            <button>加入購物車</button> 
+          </form>  
+        </div>
+      </div>
+    </body>
+        
+    </main>
+  </body>
+
+	<script src="index.js"></script>
+  </body>
+</html>

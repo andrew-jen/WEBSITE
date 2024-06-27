@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KKTIX活動</title>
+    <style>
+        table.paleBlueRows {
+            font-family: "Times New Roman", Times, serif;
+            border: 1px solid #FFFFFF;
+            width: 1000px;
+            height: 200px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        table.paleBlueRows td, table.paleBlueRows th {
+            border: 1px solid #FFFFFF;
+            padding: 3px 2px;
+        }
+        table.paleBlueRows tbody td {
+            font-size: 13px;
+        }
+        table.paleBlueRows tr:nth-child(even) {
+            background: #D0E4F5;
+        }
+        table.paleBlueRows thead {
+            background: #0B6FA4;
+            border-bottom: 5px solid #FFFFFF;
+        }
+        table.paleBlueRows thead th {
+            font-size: 17px;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-align: center;
+            border-left: 2px solid #FFFFFF;
+        }
+        table.paleBlueRows thead th:first-child {
+            border-left: none;
+        }
+        
+        table.paleBlueRows tfoot {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333333;
+            background: #D0E4F5;
+            border-top: 3px solid #444444;
+        }
+        table.paleBlueRows tfoot td {
+            font-size: 14px;
+        }
+    </style>
+    <body>
+        <h1>KKTIX</h1>
+        <div id="table-container"></div>    
+        <script>
+            fetch('https://kktix.com/events.json').then(function(response){
+                return response.json();
+            }).then(function(result){
+                console.log(result);
+                var entries = result.entry;
+                var container = document.getElementById('table-container');
+                var table = document.createElement('table');
+                table.className = 'paleBlueRows';
+                var thead = document.createElement('thead');
+                var theadTr = document.createElement('tr');
+                var tbody = document.createElement('tbody');
+                ['No','活動名稱','簡介','連結'].forEach(function(item){
+                    var td = document.createElement('td');
+                    td.innerText = item;
+                    theadTr.appendChild(td);
+                })
+                thead.appendChild(theadTr);
+                table.appendChild(thead);
+                entries.forEach(function(entry,index){
+                    var tr = document.createElement('tr');
+                    var noTd = document.createElement('td');
+                    noTd.innerText = index+1;
+                    var titleTd = document.createElement('td');
+                    titleTd.innerText = entry.title;
+                    var contentTd = document.createElement('td');
+                    contentTd.innerText = entry.content;
+                    var urlTd = document.createElement('td');
+                    urlTd.innerHTML = '<a href="'+entry.url + '">'+entry.url + '</a>';
+                    tr.appendChild(noTd);
+                    tr.appendChild(titleTd);
+                    tr.appendChild(contentTd);
+                    tr.appendChild(urlTd);
+                    tbody.appendChild(tr)
+                })
+                table.appendChild(tbody)
+                container.appendChild(table);
+            }).catch(function(error){
+                console.log(error);
+            })
+            
+            
+        </script>
+    </body>
+    </html>

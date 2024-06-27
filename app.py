@@ -16,4 +16,4 @@ if __name__=='__main__': #如果以主程式執行
   #1. 建立runtime.txt檔，內容:python-3.9.0(使用的版本)
   #2. 建立requirements.txt檔，內容:Flask 換行 gunicorn 
   #3. 建立Procfile，內容:web gunicorn app(檔名):app(變數名)
-  #4. 使用命令heroku login登錄，然後git init，再來 heroku git:remote -a python-test-jen(python-test-jen是專案名) ，使用git add . 命令 ，使用git commit -m "First Deploy" ，
+  #4. 使用命令heroku login登錄，然後git init，再來 heroku git:remote -a python-test-jen(python-test-jen是專案名) ，以上為初始化(僅需一次)，後面為內容上傳及更新，先使用git add . 命令 ，再使用git commit -m "First Deploy" ，最後git push heroku master即可更新內容

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>超链接示例</title>
+    <style>
+      .password-rule {
+          padding-left: 800px; /* 在超链接上方添加50px的内边距 */
+          font-size: 5px; /* 设置字体大小 */
+          font-weight: bold; /* 加粗 */
+      }
+  </style>
+    <style>
+        .link-container {
+            padding-left: 800px; /* 在超链接上方添加50px的内边距 */
+            font-size: 30px; /* 设置字体大小 */
+            font-weight: bold; /* 加粗 */
+        }
+    </style>
+    <title>圖片佈滿畫面示例</title>
+    <style>
+        body {
+            margin: 0; /* 移除默认的边距 */
+            height: 100vh; /* 使 body 高度为视口高度 */
+            background-image: url("http://127.0.0.1:3000/andrew/02.JPG");
+            background-size: cover; /* 背景图像覆盖整个页面 */
+            background-repeat: no-repeat; /* 背景图像不重复 */
+            background-position: center; /* 背景图像居中 */
+        }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="link-container">
+        <br><br><form action="/user" method="POST">
+          <br><br><br><br>您的姓名 <input type="text" name="name"> 
+          <br><br>您的信箱 <input type="text" name="email">
+          <br><br>設定帳號 <input type="text" name="account">
+          <br><br>設定密碼 <input type="password" name="password">
+          <br><br><button>送出表單</button>
+        </form>
+      </div>
+    </main>
+  </body>
+  <body>
+    <main>
+      <div class="password-rule">
+        <br><br><h1>密碼規則:</h1>
+        <br><h1>只能包含大小寫英文字母、數字、以及以下特殊符號 ! @ # $ %</h1>
+        <br><h1>至少要包含一個大寫和一個小寫字母</h1>
+        <br><h1>至少要包含一個數字</h1>
+        <br><h1>至少要包含一個特殊符號</h1>
+        <br><h1>必須大於等於 8 個字元、小於等於 16 個字元</h1>
+      </div>
+    </main>
+  </body>
+	<script src="index.js"></script>
+  </body>
+</html>
